@@ -17,14 +17,14 @@
 
         <h1>CodeIgniter Search and filter</h1>
         <br>
-        <?php echo form_open("Search/searchUser" , ['class' => 'form-inline']); ?>
+        <?php echo form_open("Search/searchProduct" , ['class' => 'form-inline']); ?>
             <div class="form-group">
               <input type="text" class="form-control" id="searchuser" name="search" placeholder="Type a name">
             </div>
             <button type="submit" name="searchBtn" class="btn btn-primary submit">Search</button>
             <button class="btn btn-default more" href="<?php echo site_url('Search') ?>">Reset</button>
         <?php echo form_close(); ?>
-        <?php echo form_open("Search/filterUser" , ['class' => 'form-inline']); ?>
+        <?php echo form_open("Search/filterPrice" , ['class' => 'form-inline']); ?>
             <select class="form-control" name="filter">
                 <option value="price">Price</option>
             </select>

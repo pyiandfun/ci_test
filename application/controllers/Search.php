@@ -11,12 +11,12 @@ class Search extends CI_Controller {
     public function index() {
 
         $config['base_url'] = 'http://localhost/Projects/CISearch/Search/index';
-        $data['records'] = $this->Search_model->getUser();
+        $data['records'] = $this->Search_model->getProduct();
         $this->load->view('search_data', $data);
         
     }
 
-    public function searchUser() {
+    public function searchProduct() {
         
         $key = $this->input->post('search');
 
@@ -29,7 +29,7 @@ class Search extends CI_Controller {
         }
     }
 
-    public function filterUser() {
+    public function filterPrice() {
         
         $key = $this->input->post('filter');
 
