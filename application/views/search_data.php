@@ -15,7 +15,7 @@
 
       <div class="container">
 
-        <h1>CodeIgniter Search</h1>
+        <h1>CodeIgniter Search and filter</h1>
         <br>
         <?php echo form_open("Search/searchUser" , ['class' => 'form-inline']); ?>
             <div class="form-group">
@@ -43,14 +43,15 @@
                     </tr>
 
 
-                    <?php foreach ($records as $row): ?>
-
+                    <?php if(isset($records)):
+                        foreach ($records as $row): ?>
                     <tr>
                         <td><?php echo $row->indexno; ?></td>
                         <td><?php echo $row->username; ?></td>
                         <td><?php echo $row->email; ?></td>
 
-                    <?php endforeach; ?>
+                    <?php endforeach; 
+                    endif;?>
         
                     </table>
                 </div>
