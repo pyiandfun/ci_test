@@ -6,8 +6,8 @@ class Search_model extends CI_Model{
     public function getUser() {
         
             $this->db->select('*');
-            $this->db->from('users');
-            $this->db->order_by('indexno');
+            $this->db->from('products');
+            $this->db->order_by('id');
             $query = $this->db->get();
             return $query->result();        
     }
@@ -15,10 +15,10 @@ class Search_model extends CI_Model{
     public function searchRecord($key)
     {
         $this->db->select('*');
-        $this->db->from('users');
-        $this->db->like('username',$key);
-        $this->db->or_like('email',$key);
-        $this->db->or_like('indexno',$key);
+        $this->db->from('products');
+        $this->db->like('Product_name',$key);
+        $this->db->or_like('price',$key);
+        $this->db->or_like('id',$key);
         $query = $this->db->get();
 
         if($query->num_rows()>0){
@@ -29,8 +29,8 @@ class Search_model extends CI_Model{
     public function filterRecord()
     {
         $this->db->select('*');
-        $this->db->from('users');
-        $this->db->order_by('username', 'desc');
+        $this->db->from('products');
+        $this->db->order_by('price', 'asc');
         $query = $this->db->get();
 
         if($query->num_rows()>0){

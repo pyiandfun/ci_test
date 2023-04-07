@@ -22,11 +22,11 @@
               <input type="text" class="form-control" id="searchuser" name="search" placeholder="Type a name">
             </div>
             <button type="submit" name="searchBtn" class="btn btn-primary submit">Search</button>
-            <button class="btn btn-default more" href="<?php echo site_url('Search') ?>">Refresh</button>
+            <button class="btn btn-default more" href="<?php echo site_url('Search') ?>">Reset</button>
         <?php echo form_close(); ?>
         <?php echo form_open("Search/filterUser" , ['class' => 'form-inline']); ?>
             <select class="form-control" name="filter">
-                <option value="username">Username</option>
+                <option value="price">Price</option>
             </select>
             <button type="submit" name="filterBtn" class="btn btn-primary submit">Search</button>
         <?php echo form_close(); ?>
@@ -37,18 +37,18 @@
                     <table class="table">
 
                     <tr>
-                        <th>Index</th>
-                        <th>Userame</th>
-                        <th>Email</th>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
                     </tr>
 
 
                     <?php if(isset($records)):
                         foreach ($records as $row): ?>
                     <tr>
-                        <td><?php echo $row->indexno; ?></td>
-                        <td><?php echo $row->username; ?></td>
-                        <td><?php echo $row->email; ?></td>
+                        <td><?php echo $row->id; ?></td>
+                        <td><?php echo $row->Product_name; ?></td>
+                        <td><?php echo $row->price; ?></td>
 
                     <?php endforeach; 
                     endif;?>
